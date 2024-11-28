@@ -1,29 +1,34 @@
 package org.example;
 
 public class Node {
-    private String key;
-    private ValueFunction valueFunction;
+    public String key;
+    private ValueFunction value;
+    private Node next;
 
-    // Constructor
     public Node(String key, ValueFunction valueFunction) {
         this.key = key;
-        this.valueFunction = valueFunction;
+        this.value = valueFunction;
+        this.next = null;
     }
 
-    // Getter for the key
     public String getKey() {
         return key;
     }
 
-    // Getter for the value that directly calls the function with the key
     public Object getValue() {
-        return valueFunction.apply(key); // Execute the function with the key
+        return value.apply(key);
     }
 
-    // Interface representing a function that takes a key and returns either String
-    // or void (null)
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+
     @FunctionalInterface
     public interface ValueFunction {
-        Object apply(String key); // Returns either String or null (to represent void)
+        Object apply(String key);
     }
 }

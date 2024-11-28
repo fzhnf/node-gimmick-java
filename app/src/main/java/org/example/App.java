@@ -4,10 +4,7 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) {
-        // helloWorld function that returns a String
-        Node.ValueFunction helloWorld = (key) -> {
-            return "Hello, World!"; // Return String
-        };
+        LinkedList list = new LinkedList();
 
         // randomNumber function that returns a String
         Node.ValueFunction randomNumber = (key) -> {
@@ -33,10 +30,13 @@ public class App {
             return null; // Return null for void behavior
         };
 
-        // Create Node instances
-        Node node1 = new Node("hello", helloWorld);
-        Node node2 = new Node("User2", randomNumber);
-        Node node3 = new Node("User3", bukaBrowser);
+        list.insert("hello", "Hello, World!");
+        list.insert("random", randomNumber);
+        list.insert("buka browser", bukaBrowser);
+
+        Node node1 = list.search("hello");
+        Node node2 = list.search("random");
+        Node node3 = list.search("buka browser");
 
         // Call the functions directly through getValue() and handle return types
         Object result1 = node1.getValue();
