@@ -19,8 +19,8 @@ Gradle (Optional, for build automation): This project uses Gradle to build and r
 Step 1: Clone the Repository
 
 ```
-git clone https://github.com/your-username/node-function-java.git
-cd node-function-java
+git clone https://github.com/fzhnf/node-gimmick-java.git
+cd node-gimmick-java
 ```
 
 Step 2: Run With Gradle
